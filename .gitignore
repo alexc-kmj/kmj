@@ -1,0 +1,9 @@
+# filetypes
+*.csv
+*.xlsx
+*.xls
+
+# directories
+python/ACES & PIES/*
+python/Assault Race Car Catalog/*
+python/Photo Editing/*

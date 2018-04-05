@@ -1,0 +1,15 @@
+## IT Managed Lines ##
+
+Select Listings.ListingID, Inventory.SKU, Inventory.InventoryID, Inventory.QtyUncommitted, Listings.QtyRemaining, Listings.NumberSold, Listings.QtyToList, Listings.OutOfStock
+from Inventory
+Inner Join Listings On Listings.ItemID = Inventory.ItemID
+Where Listings.StatusID = 2000 AND ( Inventory.SKU like 'GFU%' OR Inventory.SKU like 'FMP%' OR Inventory.SKU like 'AVS%' OR Inventory.SKU like 'BLM%' OR Inventory.SKU like 'BUS%' OR Inventory.SKU like 'LND%'
+	OR Inventory.SKU like 'RPG%' OR Inventory.SKU like 'RNL%' OR Inventory.SKU like 'STA%' OR Inventory.SKU like 'FLO%' OR Inventory.SKU like 'BMM%' OR Inventory.SKU like 'HUR%' OR Inventory.SKU like 'DEL%'
+	OR Inventory.SKU like 'LAZ%' OR Inventory.SKU like 'MAG%' OR Inventory.SKU like 'PUT%')
+ORDER BY SKU
+
+## Check the Revisions ##
+
+SELECT *
+FROM Listings
+WHERE RevisionPending = 1
